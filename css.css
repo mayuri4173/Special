@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #f9d1d1, #fef7f7);
+    color: #5a3d3d;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #d44d5c;
+    animation: pulse 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #8a5a5a;
+}
+
+.heart-divider {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Sections */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 40px 0;
+}
+
+/* Memory Cards */
+.memory-lane {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(212,77,92,0.1);
+}
+
+.memory-icon {
+    font-size: 3rem;
+    color: #d44d5c;
+    margin-bottom: 15px;
+}
+
+
+/* Countdown */
+.countdown-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px auto;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-item {
+    background: #f9d1d1;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 100px;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    color: #d44d5c;
+}
+
+/* Proposal */
+.proposal-text {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.proposal-name {
+    color: #d44d5c;
+    font-weight: bold;
+}
+
+.proposal-button {
+    background: linear-gradient(to right, #d44d5c, #e87e8c);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Reveal */
+.proposal-reveal {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.proposal-question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #d44d5c;
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    animation: float 15s infinite linear;
+}
+
+/* Animations */
+@keyframes pulse {
+    50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 0; }
+    to { transform: translateY(-100px); opacity: 1; }
+}
+/* Floating heart flow (bottom to top) */
+.flow-heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 24px;
+    animation: heartFlow linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes heartFlow {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.3);
+        opacity: 0;
+    }
+}
+/* Forever Image Reveal */
+.forever-image-container {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.forever-image-container img {
+    max-width: 320px;
+    width: 90%;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(212, 77, 92, 0.4);
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* Cartoon Proposal Animation */
+.cartoon-proposal {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-size: 4rem;
+    position: relative;
+}
+
+.girl {
+    animation: kneel 2s ease forwards;
+}
+
+.ring {
+    opacity: 0;
+    animation: ringPop 2s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.boy {
+    animation: surprise 2s ease infinite;
+    animation-delay: 2s;
+}
+
+.cartoon-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #d44d5c;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Animations */
+@keyframes kneel {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(25px) scale(0.9); }
+}
+
+@keyframes ringPop {
+    0% { opacity: 0; transform: scale(0); }
+    100% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes surprise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.final-celebration {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #ffe6f0, #ffc0cb);
+    z-index: 2000;
+    text-align: center;
+    padding-top: 25vh;
+    animation: fadeIn 1s ease forwards;
+}
+
+.final-celebration h1 {
+    font-size: 4rem;
+    color: #d44d5c;
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+.final-celebration p {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px #ff4da6; }
+    to { text-shadow: 0 0 30px #ff1493; }
+}
+
